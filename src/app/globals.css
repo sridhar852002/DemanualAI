@@ -1,0 +1,510 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+  /* Apple Design System Colors */
+  --background: #fafafa;
+  --foreground: #1d1d1f;
+  --primary: #007AFF;
+  --primary-foreground: #ffffff;
+  --secondary: #f2f2f7;
+  --secondary-foreground: #1d1d1f;
+  --muted: #f2f2f7;
+  --muted-foreground: #8e8e93;
+  --accent: #f2f2f7;
+  --accent-foreground: #1d1d1f;
+  --destructive: #ff3b30;
+  --destructive-foreground: #ffffff;
+  --border: #d1d1d6;
+  --input: #f2f2f7;
+  --ring: #007AFF;
+  --card: #ffffff;
+  --card-foreground: #1d1d1f;
+  --popover: #ffffff;
+  --popover-foreground: #1d1d1f;
+  
+  /* Apple System Colors */
+  --system-blue: #007AFF;
+  --system-green: #34C759;
+  --system-orange: #FF9500;
+  --system-red: #FF3B30;
+  --system-purple: #AF52DE;
+  --system-pink: #FF2D92;
+  --system-yellow: #FFCC00;
+  --system-teal: #5AC8FA;
+  --system-indigo: #5856D6;
+  
+  /* Apple Gray Scale */
+  --gray-1: #8E8E93;
+  --gray-2: #AEAEB2;
+  --gray-3: #C7C7CC;
+  --gray-4: #D1D1D6;
+  --gray-5: #E5E5EA;
+  --gray-6: #F2F2F7;
+  
+  /* Apple Backgrounds */
+  --bg-primary: #ffffff;
+  --bg-secondary: #f2f2f7;
+  --bg-tertiary: #ffffff;
+  --bg-grouped: #f2f2f7;
+  --bg-grouped-secondary: #ffffff;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #000000;
+    --foreground: #ffffff;
+    --primary: #0A84FF;
+    --primary-foreground: #ffffff;
+    --secondary: #1c1c1e;
+    --secondary-foreground: #ffffff;
+    --muted: #1c1c1e;
+    --muted-foreground: #8e8e93;
+    --accent: #1c1c1e;
+    --accent-foreground: #ffffff;
+    --destructive: #ff453a;
+    --destructive-foreground: #ffffff;
+    --border: #38383a;
+    --input: #1c1c1e;
+    --ring: #0A84FF;
+    --card: #1c1c1e;
+    --card-foreground: #ffffff;
+    --popover: #1c1c1e;
+    --popover-foreground: #ffffff;
+    
+    /* Dark mode backgrounds */
+    --bg-primary: #000000;
+    --bg-secondary: #1c1c1e;
+    --bg-tertiary: #2c2c2e;
+    --bg-grouped: #000000;
+    --bg-grouped-secondary: #1c1c1e;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: -0.01em;
+}
+
+/* Apple-style scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--apple-gray-3);
+  border-radius: 4px;
+  border: 2px solid transparent;
+  background-clip: content-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--apple-gray-2);
+  background-clip: content-box;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: var(--apple-gray-2);
+  background-clip: content-box;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: var(--apple-gray);
+  background-clip: content-box;
+}
+
+/* Apple-style glass effect */
+.glass {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.dark .glass {
+  background: rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+/* Apple-style gradients */
+.gradient-primary {
+  background: linear-gradient(135deg, var(--apple-blue) 0%, #0056CC 100%);
+}
+
+.gradient-secondary {
+  background: linear-gradient(135deg, var(--apple-purple) 0%, #8B4FDB 100%);
+}
+
+.gradient-success {
+  background: linear-gradient(135deg, var(--apple-green) 0%, #2BB34A 100%);
+}
+
+.gradient-warm {
+  background: linear-gradient(135deg, var(--apple-orange) 0%, #E6850E 100%);
+}
+
+.gradient-cool {
+  background: linear-gradient(135deg, var(--apple-pink) 0%, #E61A7A 100%);
+}
+
+.gradient-purple {
+  background: linear-gradient(135deg, var(--apple-purple) 0%, #9B4FDB 100%);
+}
+
+.gradient-blue {
+  background: linear-gradient(135deg, var(--apple-blue) 0%, #0056CC 100%);
+}
+
+.gradient-orange {
+  background: linear-gradient(135deg, var(--apple-orange) 0%, #E6850E 100%);
+}
+
+/* Apple-style animations */
+.animate-fade-in {
+  animation: fadeIn 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.animate-slide-up {
+  animation: slideUp 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.animate-scale-in {
+  animation: scaleIn 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.animate-bounce-in {
+  animation: bounceIn 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+@keyframes fadeIn {
+  from { 
+    opacity: 0; 
+  }
+  to { 
+    opacity: 1; 
+  }
+}
+
+@keyframes slideUp {
+  from { 
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to { 
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from { 
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to { 
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes bounceIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+  70% {
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Apple-style focus and interactions */
+.focus-ring {
+  @apply focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2;
+  transition: all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Apple-style hover effects */
+.hover-lift {
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.hover-lift:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08), 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.dark .hover-lift:hover {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3), 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+/* Apple Calendar Design */
+.calendar-day {
+  @apply relative p-2 h-24 border border-transparent hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors cursor-pointer rounded-lg;
+  background: var(--bg-primary);
+}
+
+.calendar-day:hover {
+  background: var(--bg-secondary);
+}
+
+.dark .calendar-day {
+  background: var(--bg-secondary);
+}
+
+.dark .calendar-day:hover {
+  background: var(--bg-tertiary);
+}
+
+.calendar-day.today {
+  background: var(--system-blue);
+  color: white;
+  border-radius: 8px;
+}
+
+.calendar-day.has-events {
+  background: var(--bg-primary);
+  border-left: 3px solid var(--system-blue);
+}
+
+.dark .calendar-day.has-events {
+  background: var(--bg-secondary);
+}
+
+/* Apple-style event cards */
+.event-card {
+  @apply rounded-lg p-2 text-xs font-medium text-white shadow-sm hover:shadow-md transition-all duration-200 cursor-pointer;
+  border-radius: 8px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+
+.event-card:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Apple-style modal backdrop */
+.modal-backdrop {
+  backdrop-filter: blur(20px) saturate(180%);
+  background: rgba(0, 0, 0, 0.4);
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.dark .modal-backdrop {
+  background: rgba(0, 0, 0, 0.7);
+}
+
+/* Modal content scrolling */
+.modal-content {
+  max-height: 90vh;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+}
+
+/* Ensure modal can scroll on all devices */
+@media (max-height: 600px) {
+  .modal-content {
+    max-height: 95vh;
+  }
+}
+
+/* Fix for iOS Safari */
+@supports (-webkit-touch-callout: none) {
+  .modal-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+/* Apple-style buttons */
+.btn-primary {
+  @apply text-white font-medium px-6 py-3 rounded-xl shadow-sm hover:shadow-md transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 dark:focus:ring-offset-gray-900;
+  background: var(--apple-blue);
+  border-radius: 12px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.btn-primary:hover {
+  background: #0056CC;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 122, 255, 0.3);
+}
+
+.btn-secondary {
+  @apply text-gray-700 dark:text-gray-300 font-medium px-6 py-3 rounded-xl shadow-sm hover:shadow-md transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2 dark:focus:ring-offset-gray-900;
+  background: #F2F2F7;
+  border-radius: 12px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  border: 1px solid #E5E5EA;
+}
+
+.dark .btn-secondary {
+  background: #1C1C1E;
+  border: 1px solid #38383A;
+}
+
+.btn-secondary:hover {
+  background: #E5E5EA;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.dark .btn-secondary:hover {
+  background: #2C2C2E;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.btn-danger {
+  @apply text-white font-medium px-6 py-3 rounded-xl shadow-sm hover:shadow-md transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 dark:focus:ring-offset-gray-900;
+  background: var(--apple-red);
+  border-radius: 12px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.btn-danger:hover {
+  background: #D70015;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(255, 59, 48, 0.3);
+}
+
+/* Apple-style inputs */
+.input-field {
+  @apply w-full py-3 px-4 border border-gray-300 dark:border-gray-600 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 placeholder-gray-500 dark:placeholder-gray-400;
+  border-radius: 12px;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.input-field:focus {
+  box-shadow: 0 0 0 3px rgba(0, 122, 255, 0.1), 0 1px 3px rgba(0, 0, 0, 0.05);
+  border-color: var(--apple-blue);
+}
+
+.dark .input-field:focus {
+  box-shadow: 0 0 0 3px rgba(0, 122, 255, 0.2), 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* Input field with icon - proper spacing */
+.input-field.pl-14 {
+  padding-left: 3.5rem;
+}
+
+.input-field.pr-14 {
+  padding-right: 3.5rem;
+}
+
+/* Apple Design System Cards */
+.card {
+  background: var(--bg-primary);
+  border-radius: 16px;
+  border: 0.5px solid var(--border);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s ease;
+}
+
+.card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transform: translateY(-1px);
+}
+
+.dark .card {
+  background: var(--bg-secondary);
+  border: 0.5px solid var(--border);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.dark .card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.card-header {
+  padding: 20px 24px;
+  border-bottom: 0.5px solid var(--border);
+  background: var(--bg-primary);
+}
+
+.dark .card-header {
+  background: var(--bg-secondary);
+  border-bottom: 0.5px solid var(--border);
+}
+
+.card-content {
+  padding: 24px;
+}
+
+/* Apple-style loading states */
+.loading-shimmer {
+  background: linear-gradient(90deg, #F2F2F7 25%, #E5E5EA 50%, #F2F2F7 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: 12px;
+}
+
+.dark .loading-shimmer {
+  background: linear-gradient(90deg, #1C1C1E 25%, #2C2C2E 50%, #1C1C1E 75%);
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+/* Hide Next.js development indicators */
+#__next-build-watcher,
+#__next-dev-overlay,
+[data-nextjs-scroll-focus-boundary],
+[data-nextjs-dialog-overlay],
+[data-nextjs-dialog],
+[data-nextjs-toast],
+[data-nextjs-portal] {
+  display: none !important;
+}
+
+/* Hide any Next.js development overlay elements */
+[data-nextjs-dev-overlay] {
+  display: none !important;
+}
