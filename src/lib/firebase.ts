@@ -12,16 +12,10 @@ const firebaseConfig = {
   measurementId: process.env.NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID,
 };
 
-// Initialize Firebase
 const app = initializeApp(firebaseConfig);
 
-// Initialize Firebase Authentication and get a reference to the service
 export const auth = getAuth(app);
-
-// Initialize Google Auth Provider
 export const googleProvider = new GoogleAuthProvider();
-
-// Initialize Analytics (only in browser environment and production)
 export const analytics = typeof window !== 'undefined' && process.env.NODE_ENV === 'production' ? getAnalytics(app) : null;
 
 export default app;
