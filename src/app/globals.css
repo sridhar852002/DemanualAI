@@ -59,35 +59,33 @@
   --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #000000;
-    --foreground: #ffffff;
-    --primary: #0A84FF;
-    --primary-foreground: #ffffff;
-    --secondary: #1c1c1e;
-    --secondary-foreground: #ffffff;
-    --muted: #1c1c1e;
-    --muted-foreground: #8e8e93;
-    --accent: #1c1c1e;
-    --accent-foreground: #ffffff;
-    --destructive: #ff453a;
-    --destructive-foreground: #ffffff;
-    --border: #38383a;
-    --input: #1c1c1e;
-    --ring: #0A84FF;
-    --card: #1c1c1e;
-    --card-foreground: #ffffff;
-    --popover: #1c1c1e;
-    --popover-foreground: #ffffff;
-    
-    /* Dark mode backgrounds */
-    --bg-primary: #000000;
-    --bg-secondary: #1c1c1e;
-    --bg-tertiary: #2c2c2e;
-    --bg-grouped: #000000;
-    --bg-grouped-secondary: #1c1c1e;
-  }
+.dark {
+  --background: #000000;
+  --foreground: #ffffff;
+  --primary: #0A84FF;
+  --primary-foreground: #ffffff;
+  --secondary: #1c1c1e;
+  --secondary-foreground: #ffffff;
+  --muted: #1c1c1e;
+  --muted-foreground: #8e8e93;
+  --accent: #1c1c1e;
+  --accent-foreground: #ffffff;
+  --destructive: #ff453a;
+  --destructive-foreground: #ffffff;
+  --border: #38383a;
+  --input: #1c1c1e;
+  --ring: #0A84FF;
+  --card: #1c1c1e;
+  --card-foreground: #ffffff;
+  --popover: #1c1c1e;
+  --popover-foreground: #ffffff;
+  
+  /* Dark mode backgrounds */
+  --bg-primary: #000000;
+  --bg-secondary: #1c1c1e;
+  --bg-tertiary: #2c2c2e;
+  --bg-grouped: #000000;
+  --bg-grouped-secondary: #1c1c1e;
 }
 
 body {
