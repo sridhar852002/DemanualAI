@@ -395,7 +395,7 @@ body {
 
 .btn-danger {
   @apply text-white font-medium px-6 py-3 rounded-xl shadow-sm hover:shadow-md transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 dark:focus:ring-offset-gray-900;
-  background: var(--apple-red);
+  background: #FF3B30;  /* Changed from var(--apple-red) */
   border-radius: 12px;
   font-weight: 500;
   letter-spacing: -0.01em;
